@@ -13,12 +13,19 @@ MainWindow::MainWindow()  {
     this->setWindowButtonFlag(ElaAppBarType::ThemeChangeButtonHint,false);
     this->setWindowButtonFlag(ElaAppBarType::NavigationButtonHint,false);
     this->setWindowButtonFlag(ElaAppBarType::RouteBackButtonHint,false);
+    // this->setIsFixedSize(true);
+    // this->setMaximumHeight(500);
+    // this->setMinimumWidth(300);
+    // // 禁止窗口大小改变
+    // this->setFixedSize(QSize(300, 500));
 
-    this->setMaximumHeight(500);
-    this->setMinimumWidth(300);
-    // 禁止窗口大小改变
-    this->setFixedSize(QSize(300, 500));
-    this->setIsFixedSize(false);
+    this->_login_widget = new LoginWidget(this);
+    // this->setCustomWidget(ElaAppBarType::CustomArea::LeftArea,_login_widget);
+
+    // _login_widget->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
+    _login_widget->show();
+
+
 
 }
 

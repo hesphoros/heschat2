@@ -9,6 +9,7 @@
 #include <ElaAppBar.h>
 #include <QMainWindow>
 #include <QSize>
+#include "loginwidget.h"
 
 class MainWindow : public ElaWindow
 {
@@ -17,6 +18,7 @@ public:
     MainWindow();
 private:
     QLabel * _icon_laber;
+    LoginWidget* _login_widget;
 };
 
 #endif // MAINWINDOW_H

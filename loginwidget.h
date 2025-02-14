@@ -22,8 +22,24 @@ public:
     ~LoginWidget();
 
 private:
-    QLabel * _head_label;
-    QVBoxLayout *_mainLayout;
+    QLabel*         _head_label;
+    QVBoxLayout*    _mainLayout;
+    ElaLineEdit*    _user_linedit;
+    ElaLineEdit*    _password_linedit;
+    ElaPushButton*  _login_btn;
+    ElaPushButton*  _register_btn;
+    QWidget*        _head_widget;
+    QVBoxLayout*    _head_layout;
+    QHBoxLayout*    _user_layout;
+    QHBoxLayout*    _password_layout;
+
+    QHBoxLayout*    _forget_password_layout;
+    QLabel*         _password_label;
+    QLabel*         _user_label;
+    QLabel*         _forget_passwordd_label;
+    QHBoxLayout*    _button_layout;
+
+
 
 private slots:
     void slots_OnLoginClicked();
