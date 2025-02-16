@@ -1,6 +1,6 @@
 #include "loginwidget.h"
 
-LoginWidget::LoginWidget(QWidget *parent)
+LoginWidget::LoginWidget(QWidget *parent) : ElaWidget(parent)
 {
 
     // 设置窗口的最大和最小尺寸
@@ -28,14 +28,14 @@ LoginWidget::LoginWidget(QWidget *parent)
     // 用户输入框布局
     _user_layout = new QHBoxLayout();
     _user_linedit = new ElaLineEdit(this);
-    _user_label = new QLabel("user", this);
+    _user_label = new QLabel("用户:", this);
     _user_layout->addWidget(_user_label);
     _user_layout->addWidget(_user_linedit);
     _mainLayout->addLayout(_user_layout);
 
     // 密码输入框布局
     _password_layout = new QHBoxLayout();
-    _password_label = new QLabel("password", this);
+    _password_label = new QLabel("密码:", this);
     _password_linedit = new ElaLineEdit(this);
     _password_linedit->setEchoMode(QLineEdit::Password);
     _password_layout->addWidget(_password_label);
@@ -44,7 +44,7 @@ LoginWidget::LoginWidget(QWidget *parent)
 
     // 忘记密码链接
     _forget_password_layout = new QHBoxLayout();
-    _forget_passwordd_label = new QLabel("forget", this);
+    _forget_passwordd_label = new QLabel("忘记密码", this);
     _forget_password_layout->addSpacerItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Fixed));
     _forget_password_layout->addWidget(_forget_passwordd_label);
     _mainLayout->addLayout(_forget_password_layout);
@@ -59,8 +59,11 @@ LoginWidget::LoginWidget(QWidget *parent)
     _mainLayout->addLayout(_button_layout);
 
     // 设置最小尺寸
-    _user_linedit->setMinimumSize(0, 25);
-    _password_linedit->setMinimumSize(0, 25);
+
+
+    _user_linedit->setMinimumHeight(30);
+    // _user_linedit->setMaximumHeight(25);
+    _password_linedit->setMinimumHeight(30);
 
     // 连接信号和槽
     connect(_login_btn, &ElaPushButton::clicked, this, &LoginWidget::slots_OnLoginClicked);
